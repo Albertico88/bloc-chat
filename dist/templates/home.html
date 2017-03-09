@@ -1,2 +1,4 @@
 <h1>Bloc Chat</h1>
-<h3 ng-repeat="rooms in home.chatRooms">{{ rooms.$value }}</h3>
+<h3 ng-repeat="room in home.chatRooms">{{ room.name }}</h3>
+<input type="text" name="name" ng-model="home.name"></input>
+<button type="button" ng-click="home.addRoom()">New Room</button>
