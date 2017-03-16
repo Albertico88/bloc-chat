@@ -2,11 +2,19 @@
   <div class="logo">
     <h1>Bloc Chat</h1>
   </div>
-    <div class="room-list">
-      <h3 ng-repeat="room in home.chatRooms">{{ room.name }}</h3>
+
+  <div class="room-list">
+    <h3 ng-repeat="room in home.chatRooms">{{ room.name }}</h3>
   </div>
+
   <div class="input-box">
     <input type="text" name="name" placeholder="New Chat Room" ng-model="home.name"></input>
     <button type="button" ng-click="home.addRoom()">Create Room</button>
   </div>
 </div>
+
+<h3>Messages</h3>
+<p ng-repeat='message in home.messages'>
+  {{ message.content }}
+  <br>
+</p>
