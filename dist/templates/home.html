@@ -4,7 +4,11 @@
   </div>
 
   <div class="room-list">
-    <h3 ng-repeat="room in home.chatRooms">{{ room.name }}</h3>
+    <h3 class="chat-rooms"
+    ng-repeat="room in home.chatRooms"
+    ng-click="home.setCurrentRoom(room)">
+      {{ room.name }}
+    </h3>
   </div>
 
   <div class="input-box">
@@ -13,8 +17,10 @@
   </div>
 </div>
 
-<h3>Messages</h3>
-<p ng-repeat='message in home.messages'>
-  {{ message.content }}
-  <br>
-</p>
+
+<div class="messages-container">
+  <h3>Messages</h3>
+  <p ng-repeat='message in home.messages'>
+    {{ message.content }}
+  </p>
+</div>
