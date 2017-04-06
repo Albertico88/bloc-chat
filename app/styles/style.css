@@ -13,7 +13,11 @@ html {
   background: linear-gradient(to left, #00c6ff, #0072ff); /* standard syntax */
 }
 
-.container {
+.main-container {
   background: white;
-  width: 220px;
+  width: 225px;
+}
+
+.messages-container {
+  background: #b1b9b8;
 }

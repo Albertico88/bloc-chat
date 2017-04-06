@@ -1,20 +1,21 @@
 (function() {
-  function Message($firebaseArray){
-    var ref = firebase.database().ref().child("messages");
-    var messages = $firebaseArray(ref);
-
-    var getByRoomId = function(roomId) {
-      var ref = firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId);
-      return $firebaseArray(ref);
-    }
+  function Message($firebaseArray) {
+    var rootRef = firebase.database().ref();
+    var roomRef = rootRef.child("messages").orderByChild("roomId");
 
     return {
-      getByRoomId: getByRoomId
+      getByRoomId: function(roomId) {
+        return $firebaseArray(roomRef.equalTo(roomId));
+      },
+
+      send: function(newMessage, roomId) {
+        messages = rootRef.child('messages')
+        message = { content: newMessage, roomId: roomId, user: 12345 }
+        messages.push(message); // prob other method, now changes database content
+        return $firebaseArray(roomRef.equalTo(roomId));
+      }
     }
-  };
-
-
-
+  }
   angular
     .module('blocChat')
     .factory('Message', ['$firebaseArray', Message]);
