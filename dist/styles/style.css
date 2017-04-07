@@ -16,6 +16,7 @@ html {
 .main-container {
   background: white;
   width: 225px;
+  cursor: default;
 }
 
 .messages-container {
