@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-html {
+body,html {
   height: 100%;
   font-size: 100%;
-  background: white;
+  max-width: 900px;
+  margin: 0 auto;
   background: -webkit-linear-gradient(right, #00c6ff, #0072ff); /* Safari */
   background: -o-linear-gradient(right, #00c6ff, #0072ff); /* Opera */
   background: linear-gradient(to left, #00c6ff, #0072ff); /* standard syntax */
@@ -15,10 +16,42 @@ html {
 
 .main-container {
   background: white;
-  width: 225px;
   cursor: default;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 200px 200px;
+  background-color: red;
+}
+
+.logo {
+  grid-column: 1 / 5;
+  grid-row: 1;
+
+  background-color: blue;
+}
+
+.room-list {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: green;
 }
 
 .messages-container {
   background: #b1b9b8;
+  grid-column: 2 / 4;
+  grid-row: 1;
+  width: auto;
+  background-color: yellow;
+}
+
+.new-chat-room {
+  grid-column: 1;
+  grid-row: auto;
+  background-color: purple;
+}
+
+.new-message {
+  grid-column: 2/4;
+  grid-row: auto;
+  background-color: purple;
 }
