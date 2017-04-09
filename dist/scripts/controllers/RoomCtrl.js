@@ -18,6 +18,7 @@
     this.newMessage = function(currentRoom){
       Message.send(this.content, currentRoom.$id);
       console.log('New message added to ' + currentRoom.name + ": " + this.content);
+      this.content = " ";
     }
   }
 

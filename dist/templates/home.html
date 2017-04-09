@@ -11,6 +11,13 @@
     </h3>
   </div>
 
+  <div class="messages-container">
+    <h3>Messages</h3>
+    <p ng-repeat="message in home.messages">
+      {{ message.content }}
+    </p>
+  </div>
+
   <div class="new-chat-room">
     <input type="text" name="name" placeholder="New chat room" ng-model="home.name"></input>
     <button type="button" ng-click="home.addRoom()">Create Room</button>
@@ -19,13 +26,6 @@
   <div class="new-message">
     <input type="text" name="name" placeholder="New message" ng-model="home.content"></input>
     <button type="button" ng-click="home.newMessage(home.currentRoom)">Add message</button>
-  </div>
-
-  <div class="messages-container">
-    <h3>Messages</h3>
-    <p ng-repeat="message in home.messages">
-      {{ message.content }}
-    </p>
   </div>
 
 </div>
