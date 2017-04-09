@@ -12,7 +12,7 @@
   </div>
 
   <div class="messages-container">
-    <h3>Messages</h3>
+    <h3>Messages:</h3>
     <p ng-repeat="message in home.messages">
       {{ message.content }}
     </p>
@@ -25,7 +25,7 @@
 
   <div class="new-message">
     <input type="text" name="name" placeholder="New message" ng-model="home.content"></input>
-    <button type="button" ng-click="home.newMessage(home.currentRoom)">Add message</button>
+    <button type="button" ng-click="home.newMessage(home.currentRoom)">Send</button>
   </div>
 
 </div>
