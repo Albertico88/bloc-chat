@@ -18,26 +18,26 @@
           </md-button>
         </md-list-item>
       </md-list>
+
+      <md-input-container md-no-float class="md-block">
+        <input type="text" name="name" placeholder="Name your chat room" ng-model="home.name"></input>
+        <md-button class="md-raised md-primary" ng-click="home.addRoom()">Create</md-button>
+      </md-input-container>
     </md-sidenav>
 
     <md-content id="content" flex>
-      <div class="messages-container">
-        <h3>Messages</h3>
+        <h3>Messages:</h3>
         <p ng-repeat="message in home.messages">
           {{ message.content }}
         </p>
-      </div>
+
+        <div class="send-message" layout="column" flex>
+          <md-input-container md-no-float class="md-block">
+            <input type="text" name="name" placeholder="Type new message..." ng-model="home.content"></input>
+            <md-button class="md-accent" ng-click="home.newMessage(home.currentRoom)">Send</md-button>
+          </md-input-container>
+        </div>
     </md-content>
-  </div>
 
-  <div class="new-chat-room">
-    <input type="text" name="name" placeholder="New chat room" ng-model="home.name"></input>
-    <button type="button" ng-click="home.addRoom()">Create Room</button>
   </div>
-
-  <div class="new-message">
-    <input type="text" name="name" placeholder="New message" ng-model="home.content"></input>
-    <button type="button" ng-click="home.newMessage(home.currentRoom)">Add message</button>
-  </div>
-
 </div>
