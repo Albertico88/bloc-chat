@@ -7,15 +7,18 @@ html, body {
 
 .logo {
   margin-left: 10px;
+  font-family: helvetica;
 }
 
 .send-message {
-  margin-left: -10px;
+  margin-left: -30px;
   font-size: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #content {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
