@@ -1,21 +1,33 @@
-<div class="main-container">
-  <div class="logo">
-    <h1>Bloc Chat</h1>
-  </div>
+<div class="main-container" layout="column">
 
-  <div class="room-list">
-    <h3 class="chat-rooms"
-    ng-repeat="room in home.chatRooms"
-    ng-click="home.setCurrentRoom(room);">
-      {{ room.name }}
-    </h3>
-  </div>
+  <md-toolbar>
+    <div class="logo">
+      <h1>Bloc Chat</h1>
+    </div>
+  </md-toolbar>
 
-  <div class="messages-container">
-    <h3>Messages</h3>
-    <p ng-repeat="message in home.messages">
-      {{ message.content }}
-    </p>
+  <div class="container" layout="row" flex>
+
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+      <md-list>
+        <md-list-item
+          ng-repeat="room in home.chatRooms">
+          <md-button class="md-raised md-primary"
+            ng-click="home.setCurrentRoom(room);">
+              {{ room.name }}
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+    <md-content id="content" flex>
+      <div class="messages-container">
+        <h3>Messages</h3>
+        <p ng-repeat="message in home.messages">
+          {{ message.content }}
+        </p>
+      </div>
+    </md-content>
   </div>
 
   <div class="new-chat-room">
