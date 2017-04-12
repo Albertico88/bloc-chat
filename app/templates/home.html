@@ -20,8 +20,10 @@
       </md-list>
 
       <md-input-container md-no-float class="md-block">
-        <input type="text" name="name" placeholder="Name your chat room" ng-model="home.name"></input>
-        <md-button class="md-raised md-primary" ng-click="home.addRoom()">Create</md-button>
+        <input type="text" name="name" placeholder="Name your chat room..." ng-model="home.name"></input>
+        <md-button class="md-raised md-primary" ng-click="home.addRoom()">
+          Create
+        </md-button>
       </md-input-container>
     </md-sidenav>
 
@@ -33,11 +35,13 @@
 
         <div class="send-message" layout="column" flex>
           <md-input-container md-no-float class="md-block">
-            <input type="text" name="name" placeholder="Type new message..." ng-model="home.content"></input>
-            <md-button class="md-accent" ng-click="home.newMessage(home.currentRoom)">Send</md-button>
+            <input type="text" name="name" placeholder="Type your message..." ng-model="home.content"></input>
+            <md-button class="md-primary md-hue-1" ng-click="home.newMessage(home.currentRoom)">
+              Send
+              <i class="ion-ios-arrow-right"></i>
+            </md-button>
           </md-input-container>
         </div>
     </md-content>
-
   </div>
 </div>
