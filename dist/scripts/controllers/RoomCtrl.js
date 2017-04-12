@@ -2,7 +2,7 @@
   function RoomCtrl(Room, Message) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
-
+    // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
 
     this.setCurrentRoom = function(room) {
       this.currentRoom = room;
@@ -20,6 +20,7 @@
       console.log('New message added to ' + currentRoom.name + ": " + this.content);
       this.content = " ";
     }
+    // Function to sumbit message when Enter is pressed
   }
 
 angular

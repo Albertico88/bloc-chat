@@ -35,13 +35,16 @@
 
         <div class="send-message" layout="column" flex>
           <md-input-container md-no-float class="md-block">
-            <input type="text" name="name" placeholder="Type your message..." ng-model="home.content"></input>
-            <md-button class="md-primary md-hue-1" ng-click="home.newMessage(home.currentRoom)">
-              Send
-              <i class="ion-ios-arrow-right"></i>
+            <input type="text" placeholder="Type your message..." ng-model="home.content"></input>
+            <md-button
+              class="md-primary md-hue-1"
+              ng-click="home.newMessage(home.currentRoom)">
+                Send
+                <i class="ion-ios-arrow-right"></i>
             </md-button>
           </md-input-container>
         </div>
     </md-content>
   </div>
+  <footer></footer>
 </div>
