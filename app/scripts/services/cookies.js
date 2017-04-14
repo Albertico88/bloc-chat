@@ -2,7 +2,8 @@
   function BlocChatCookies($cookies) {
     var currentUser = $cookies.get('blocChatCurrentUser');
     if (!currentUser || currentUser === '') {
-      // allow users to set their name
+      console.log("You are not signed in");
+      // Modal pops to allow users to set their name
     }
   }
 
