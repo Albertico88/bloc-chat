@@ -20,7 +20,6 @@
       console.log('New message added to ' + currentRoom.name + ": " + this.content);
       this.content = " ";
     }
-    // Function to sumbit message when Enter is pressed
   }
 
 angular

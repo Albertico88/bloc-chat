@@ -30,7 +30,7 @@
     <md-content id="content" flex>
         <h3>Messages:</h3>
         <p ng-repeat="message in home.messages">
-          {{ message.content }}
+          {{ message.user }} said: {{ message.content }}
         </p>
 
         <div class="send-message" layout="column" flex>
