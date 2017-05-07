@@ -1,10 +1,17 @@
-<div class="md-padding" id="popupContainer" ng-cloak>
-  <md-button class="md-primary md-raised"
-   ng-click="prompt().showPrompt($event)">
-  Prompt Dialog
-  </md-button>
+<div class="md-padding dialogdemoBasicUsage" id="popupContainer" ng-cloak="" ng-app="blocChat">
+
+  <div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="" layout-align="center">
+    <md-button class="md-primary md-raised" ng-click="home.namePrompt($mdDialog)">
+      Prompt Dialog
+    </md-button>
+  </div>
+  <div ng-if="status" id="status">
+    <b layout="row" layout-align="center center" class="md-padding">
+      {{status}}
+    </b>
+  </div>
 </div>
-<!-- Testing Dialog Prompt  -->
+<!-- Testing Dialog Prompt Above-->
 
 
 
