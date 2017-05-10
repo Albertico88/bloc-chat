@@ -1,6 +1,5 @@
 (function () {
-  function RoomCtrl(Room, Message, $mdDialog, BlocChatCookies) {
-    var ctlr = this;
+  function RoomCtrl(Room, Message, $cookies) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
     // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
@@ -21,32 +20,12 @@
       this.content = " ";
     }
 
-    // User Name Prompt
-    ctlr.status = " ";
-    this.showPrompt = function(event) {
-      var confirm = $mdDialog.prompt()
-        .title('Welcome to BlocChat')
-        .textContent('Please enter your name')
-        .placeholder('Your name here')
-        .ariaLabel('Your name here')
-        .targetEvent(event)
-        .ok('Submit')
-        .cancel('Cancel');
-
-      $mdDialog.show(confirm).then(function(result) {
-        ctlr.status = 'Hello there ' + result + '!';
-        console.log(result);
-      }, function() {
-        ctlr.status = 'You need a name in order to chat';
-      });
-      console.log(ctlr.status);
-    };
-
-    // Tie result from showPrompt to BlocChatCookies
-
+    this.setCurrentUser = function(result){
+      $cookies.put('blocChatCurrentUser', result);
+    }
   }
 
-angular
-  .module('blocChat')
-  .controller('RoomCtrl', ['Room', 'Message', '$mdDialog', 'BlocChatCookies', RoomCtrl]);
+  angular
+    .module('blocChat')
+    .controller('RoomCtrl', ['Room', 'Message', '$cookies', RoomCtrl]);
 })();
