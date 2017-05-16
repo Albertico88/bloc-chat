@@ -1,8 +1,17 @@
 (function () {
-  function RoomCtrl(Room, Message) {
+  function RoomCtrl(Room, Message, $uibModal) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
     // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
+
+    this.open = function() {
+      $uibModal.open({
+        templateUrl: '/templates/nameModal.html',
+        size: 'lg',
+        keyboard: false,
+        controller: 'ModalCtrl as modal'
+      });
+    }
 
     this.setCurrentRoom = function(room) {
       this.currentRoom = room;
@@ -25,5 +34,5 @@
 
 angular
   .module('blocChat')
-  .controller('RoomCtrl', ['Room', 'Message', RoomCtrl]);
+  .controller('RoomCtrl', ['Room', 'Message', '$uibModal', RoomCtrl]);
 })();
