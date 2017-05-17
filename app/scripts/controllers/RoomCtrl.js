@@ -1,5 +1,5 @@
 (function () {
-  function RoomCtrl(Room, Message, $uibModal) {
+  function RoomCtrl(Room, Message) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
     // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
@@ -23,5 +23,5 @@
 
 angular
   .module('blocChat')
-  .controller('RoomCtrl', ['Room', 'Message', '$uibModal', RoomCtrl]);
+  .controller('RoomCtrl', ['Room', 'Message', RoomCtrl]);
 })();

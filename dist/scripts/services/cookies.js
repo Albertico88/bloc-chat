@@ -1,5 +1,5 @@
 (function() {
-  function BlocChatCookies($cookies, $uibModal) {
+  function BlocChatCookies($cookies) {
     let self = this;
     var currentUser = $cookies.get('blocChatCurrentUser');
 
@@ -39,5 +39,5 @@
 
   angular
     .module('blocChat')
-    .run(['$cookies', '$uibModal', BlocChatCookies]);
+    .run(['$cookies', BlocChatCookies]);
 })();
