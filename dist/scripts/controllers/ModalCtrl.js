@@ -8,6 +8,7 @@
     this.setCurrentUser = function(name) {
       $cookies.put('blocChatCurrentUser', name);
       this.cancel();
+      swal("Success!", "Welcome to Bloc Chat " + name + "!" , "success");
     }
   }
 
