@@ -16,7 +16,6 @@
     this.setCurrentRoom = function(room) {
       this.currentRoom = room;
       this.messages = Message.getByRoomId(room.$id);
-      console.log("Clicked on" + " " + room.name);
     }
 
     this.addRoom = function(){
@@ -29,7 +28,6 @@
       console.log('New message added to ' + currentRoom.name + ": " + this.content);
       this.content = " ";
     }
-    // Function to sumbit message when Enter is pressed
   }
 
 angular

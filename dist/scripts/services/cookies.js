@@ -5,7 +5,9 @@
     if (!currentUser || currentUser === '') {
       $uibModal.open({
         templateUrl: '../templates/nameModal.html',
-        controller: 'ModalCtrl as modal'
+        controller: 'ModalCtrl as modal',
+        backdrop: 'static',
+        keyboard: false
       });
     }
   }
