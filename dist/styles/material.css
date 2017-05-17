@@ -6,8 +6,14 @@ html, body {
 }
 
 .logo {
-  margin-left: 10px;
+  margin-left: 18px;
   font-family: helvetica;
+}
+
+.container {
+  margin-left: 0 !important;
+  width: 100% !important;
+  padding-left: 0px !important;
 }
 
 .send-message {
@@ -18,7 +24,24 @@ html, body {
 
 #content {
   padding-left: 40px;
-  padding-right: 40px;
   padding-top: 5px;
   font-family: 'Source Sans Pro', sans-serif;
+  width: inherit;
+}
+
+.modal-content form {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: initial;
+  font-family: helvetica;
+}
+
+
+.modal-content input {
+  width: 50%;
+}
+
+.modal-content button {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bolder;
 }

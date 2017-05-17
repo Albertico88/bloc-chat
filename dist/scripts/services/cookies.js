@@ -1,14 +1,18 @@
 (function() {
-  function BlocChatCookies($cookies) {
+  function BlocChatCookies($cookies, $uibModal) {
     var currentUser = $cookies.get('blocChatCurrentUser');
+
     if (!currentUser || currentUser === '') {
-      console.log("You are not signed in");
-      // Modal pops to allow users to set their name
+      $uibModal.open({
+        templateUrl: '../templates/nameModal.html',
+        controller: 'ModalCtrl as modal',
+        backdrop: 'static',
+        keyboard: false
+      });
     }
   }
 
-
   angular
     .module('blocChat')
-    .run(['$cookies', BlocChatCookies]);
+    .run(['$cookies', '$uibModal', BlocChatCookies]);
 })();
