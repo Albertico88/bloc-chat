@@ -5,11 +5,16 @@
       $uibModalInstance.dismiss();
     }
 
-    this.setCurrentUser = function(name) {
-      $cookies.put('blocChatCurrentUser', name);
-      this.cancel();
-      swal("Success!", "Welcome to Bloc Chat " + name + "!" , "success");
-    }
+    // this.setCurrentUser = function(name) {
+    //   $cookies.put('blocChatCurrentUser', name);
+    //   this.cancel();
+    //   swal({
+    //     title: "Success!",
+    //     text: "Welcome " + name + "!",
+    //     type: "success",
+    //     timer: 6000
+    //   });
+    // }
   }
 
 
