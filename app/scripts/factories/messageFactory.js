@@ -10,7 +10,12 @@
 
       send: function(newMessage, roomId) {
         messages = rootRef.child('messages')
-        message = { content: newMessage, roomId: roomId, user: $cookies.get('blocChatCurrentUser')  }
+        message = {
+          content: newMessage,
+          roomId: roomId,
+          user: $cookies.get('blocChatCurrentUser')
+        }
+        
         messages.push(message);
         return $firebaseArray(roomRef.equalTo(roomId));
       }

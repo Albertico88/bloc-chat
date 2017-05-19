@@ -2,7 +2,6 @@
   function RoomCtrl(Room, Message) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
-    // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
 
     this.setCurrentRoom = function(room) {
       this.currentRoom = room;
@@ -15,8 +14,12 @@
     }
 
     this.newMessage = function(currentRoom){
-      Message.send(this.content, currentRoom.$id);
-      this.content = " ";
+      if(this.content === ' ') {
+        swal("Oops...", "You forgot to type your message!", "error");
+      } else {
+        Message.send(this.content, currentRoom.$id);
+        this.content = " ";
+      }
     }
   }
 
