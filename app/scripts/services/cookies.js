@@ -30,7 +30,7 @@
           title: "Success!",
           text: "Welcome " + inputValue + "!",
           type: "success",
-          timer: 3500,
+          timer: 3000,
           showConfirmButton: false
         });
       });

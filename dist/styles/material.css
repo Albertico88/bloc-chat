@@ -5,6 +5,18 @@ html, body {
   padding: 0px;
 }
 
+.md-alert {
+  position: absolute;
+}
+
+.md-toolbar-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 31%;
+  background: #5E7CE2;
+}
+
 .logo {
   margin-left: 18px;
   font-family: helvetica;
@@ -27,4 +39,5 @@ html, body {
   padding-top: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   width: inherit;
+  height: 70%;
 }
