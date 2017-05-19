@@ -15,7 +15,7 @@
 
     this.newMessage = function(currentRoom){
       if(this.content === ' ') {
-        swal("Oops...", "You forgot to type your message!", "error");
+        swal("Oops...", "I can\'t send and empty message", "error");
       } else {
         Message.send(this.content, currentRoom.$id);
         this.content = " ";

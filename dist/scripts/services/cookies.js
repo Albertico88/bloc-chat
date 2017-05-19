@@ -18,7 +18,7 @@
       function(inputValue){
         if (inputValue === false) return false;
 
-        if (inputValue === "") {
+        if (inputValue === " ") {
           swal.showInputError("You need to enter a name in order to chat!");
           return false
         }

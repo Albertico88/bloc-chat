@@ -9,6 +9,10 @@ html, body {
   position: absolute;
 }
 
+.welcomeMessage {
+  font-size: 28px !important;
+}
+
 .md-toolbar-tools {
   display: flex;
   justify-content: center;
