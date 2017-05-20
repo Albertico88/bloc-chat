@@ -5,6 +5,22 @@ html, body {
   padding: 0px;
 }
 
+.md-alert {
+  position: absolute;
+}
+
+.welcomeMessage {
+  font-size: 28px !important;
+}
+
+.md-toolbar-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 31%;
+  background: #5E7CE2;
+}
+
 .logo {
   margin-left: 18px;
   font-family: helvetica;
@@ -27,21 +43,5 @@ html, body {
   padding-top: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   width: inherit;
-}
-
-.modal-content form {
-  padding-left: 20px;
-  padding-bottom: 20px;
-  font-size: initial;
-  font-family: helvetica;
-}
-
-
-.modal-content input {
-  width: 50%;
-}
-
-.modal-content button {
-  font-family: 'Helvetica', sans-serif;
-  font-weight: bolder;
+  height: 70%;
 }

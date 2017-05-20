@@ -1,17 +1,7 @@
 (function () {
-  function RoomCtrl(Room, Message, $uibModal) {
+  function RoomCtrl(Room, Message) {
     this.chatRooms = Room.all;
     this.currentRoom = null;
-    // this.defaultRoom = firebase.database().ref().child("rooms").equalTo("-Kep7ykrTk74_OOqCQnl");
-
-    this.open = function() {
-      $uibModal.open({
-        templateUrl: '/templates/nameModal.html',
-        size: 'lg',
-        keyboard: false,
-        controller: 'ModalCtrl as modal'
-      });
-    }
 
     this.setCurrentRoom = function(room) {
       this.currentRoom = room;
@@ -24,13 +14,16 @@
     }
 
     this.newMessage = function(currentRoom){
-      Message.send(this.content, currentRoom.$id);
-      console.log('New message added to ' + currentRoom.name + ": " + this.content);
-      this.content = " ";
+      if(this.content === ' ') {
+        swal("Oops...", "I can\'t send and empty message", "error");
+      } else {
+        Message.send(this.content, currentRoom.$id);
+        this.content = " ";
+      }
     }
   }
 
 angular
   .module('blocChat')
-  .controller('RoomCtrl', ['Room', 'Message', '$uibModal', RoomCtrl]);
+  .controller('RoomCtrl', ['Room', 'Message', RoomCtrl]);
 })();
